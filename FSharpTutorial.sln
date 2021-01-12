@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz.Gureilla", "FizzBuzz.Gureilla\FizzBuzz.Gureilla.fsproj", "{D34F6062-F396-4235-9A4C-421418F47CB7}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz", "FizzBuzz\FizzBuzz.fsproj", "{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D34F6062-F396-4235-9A4C-421418F47CB7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D34F6062-F396-4235-9A4C-421418F47CB7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D34F6062-F396-4235-9A4C-421418F47CB7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D34F6062-F396-4235-9A4C-421418F47CB7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8DB6514-53AC-4CBC-A816-DE1D37748D23}
+	EndGlobalSection
+EndGlobal
