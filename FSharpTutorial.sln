@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz.Gureilla", "FizzBuzz.Gureilla\FizzBuzz.Gureilla.fsproj", "{D34F6062-F396-4235-9A4C-421418F47CB7}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FizzBuzz.ConsoleUI", "FizzBuzz.ConsoleUI\FizzBuzz.ConsoleUI.fsproj", "{D34F6062-F396-4235-9A4C-421418F47CB7}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz", "FizzBuzz\FizzBuzz.fsproj", "{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}"
+Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FizzBuzz", "FizzBuzz\FizzBuzz.fsproj", "{3E0978F4-D4F1-4D7A-B04B-92D6EAF16529}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

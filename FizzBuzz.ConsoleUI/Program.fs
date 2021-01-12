@@ -3,7 +3,8 @@ open FizzBuzz
 
 [<EntryPoint>]
 let main argv =
-    let input = argv.[0]
+    printfn "Please enter a number betweeb 1 and 4000"
+    let input = Console.ReadLine()
     match Int32.TryParse input with
     | false, _ -> printfn "%s is not a valid intenger." input
     | true, number -> 
