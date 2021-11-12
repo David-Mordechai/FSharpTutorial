@@ -1,8 +1,7 @@
 ﻿open System
-open FizzBuzz
 
 [<EntryPoint>]
-let main argv =
+let main _argv =
     printfn "Please enter a number betweeb 1 and 4000"
     let input = Console.ReadLine()
     match Int32.TryParse input with
@@ -20,9 +19,5 @@ let main argv =
                 | (n,_,_) -> string n)
             |> String.concat "\n"
             |> printfn "Here is the output:\n%s"
-
-
-    Application.application Console.ReadLine Console.WriteLine ()
-
-    0 
+    0
     

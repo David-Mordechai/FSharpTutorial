@@ -6,10 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Include="Learning.fsx" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\FizzBuzz\FizzBuzz.fsproj" />
+  </ItemGroup>
 
 </Project>
