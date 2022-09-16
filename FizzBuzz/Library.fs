@@ -37,10 +37,10 @@ module FizzBuzz =
         [1 .. ValidNumber.value validNumber]
         |> List.map (fun n -> (n, n % 3, n % 5))
         |> List.map (function
-            | (_,0,0) -> "FizzBuzz"
-            | (_,0,_) -> "Fizz"
-            | (_,_,0) -> "Buzz"
-            | (n,_,_) -> string n)
+            | _,0,0 -> "FizzBuzz"
+            | _,0,_ -> "Fizz"
+            | _,_,0 -> "Buzz"
+            | n,_,_ -> string n)
         |> String.concat "\n"
 
 module Domain =
@@ -96,16 +96,16 @@ module Application =
 
     let application (input: Input) (output: Output) =
         fun () ->
-            output "Please enter a number betweeb 1 and 4000"
+            output "Please enter a number between 1 and 4000"
             input ()
             |> execute
             |> function
                 | Ok s -> 
-                    sprintf "Here is the output:\n%s" s
+                    $"Here is the output:\n%s{s}"
                     |> output
                 | Error (ParserError (NotANumber s)) ->
-                    sprintf "%s is not an integer" s
+                    $"%s{s} is not an integer"
                     |> output
                 | Error (ValidatorError (InvalidNumber num)) ->
-                    sprintf "You entered %i. Please enter valid integer betweeb 1 and 4000." num
+                    $"You entered %i{num}. Please enter valid integer between 1 and 4000."
                     |> output

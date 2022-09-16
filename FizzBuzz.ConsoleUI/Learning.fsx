@@ -4,11 +4,11 @@ open System.Threading
 let currentTime () = 
     DateTime.Now
 
-printfn "Time = %O" (currentTime())
+printfn $"Time = {currentTime()}"
 
 Thread.Sleep 2000
 
-printfn "Time = %O" (currentTime())
+printfn $"Time = {currentTime()}"
 
 currentTime()
     |> printfn "Time = %O"
@@ -23,7 +23,7 @@ let list = [1;2;3]
 
 
 let getFirstItem = function 
-    | y::xs -> Some y
+    | y::_ -> Some y
     | _ -> None
 
 getFirstItem list
