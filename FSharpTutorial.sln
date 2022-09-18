@@ -9,6 +9,8 @@ Project("{6EC3EE1D-3C4E-46DD-8F32-0CC8E7565705}") = "FizzBuzz", "FizzBuzz\FizzBu
 EndProject
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FizzBuzz.CleanCLI", "FizzBuzz.CleanCLI\FizzBuzz.CleanCLI.fsproj", "{1F1B070B-250A-4BE1-8C8D-7F2F0313AA0C}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharpTutorial", "FSharpTutorial\FSharpTutorial.fsproj", "{5C3F5DA2-5109-452D-9091-C3A6F8DAF680}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{1F1B070B-250A-4BE1-8C8D-7F2F0313AA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1F1B070B-250A-4BE1-8C8D-7F2F0313AA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1F1B070B-250A-4BE1-8C8D-7F2F0313AA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C3F5DA2-5109-452D-9091-C3A6F8DAF680}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C3F5DA2-5109-452D-9091-C3A6F8DAF680}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C3F5DA2-5109-452D-9091-C3A6F8DAF680}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C3F5DA2-5109-452D-9091-C3A6F8DAF680}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
