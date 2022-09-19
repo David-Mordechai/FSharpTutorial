@@ -78,6 +78,7 @@ let translateFizzBuzz = function
     | "FizzBuzz" -> string 15
     | x -> x
 
+
 type NormalRectangle = { Base: double; Height: double }
 
 type Rectangle =
@@ -111,3 +112,134 @@ let triangleArea = Shape.area triangle
 
 
 // Sum types 1:52
+
+// This works with Single Case Pattern matches
+// Record types
+// Tuples
+// Single case Discriminated unions
+
+type OrderId = OrderId of int
+
+let incrementOrderId (OrderId id) =
+    OrderId <| id + 1
+    
+let incrementOrderId' =
+    fun (OrderId id) ->
+        OrderId <| id + 1
+    
+let area { Base = b; Height = h } =
+    b * h
+    
+let area' (b,h) = b * h
+
+let translateFizzBuzz' = function
+    | "Fizz" -> Some 3
+    | "Buzz" -> Some 5
+    | "FizzBuzz" -> Some 15
+    | _ -> None
+    
+let hasValue = function
+    | Some _ -> true
+    | None -> false
+    
+let inline add x y = x + y
+
+// Collections
+
+// Arrays
+// Fixed size
+// Mutable
+let arr1 = [|1;2;3;4;5|]
+let arr2 = [|
+               1
+               2
+               3
+               4
+               5
+           |]
+let arr3 = [1..5]
+arr1.[0] <- 5
+
+// Lists
+// Immutable
+// Linked list
+let list1 = [1;2;3;4;5]
+let list2 = [
+                1
+                2
+                3
+                4
+                5
+            ]
+
+let list3 = [1..5] // increment by 1
+let list4 = [1 ..2.. 10] // increment by 2
+
+let list5 = [1. .. 0.1 .. 5.] // increment by 0.1
+let list6 = ['a' .. 'z']
+
+// // list
+// // cons
+// type LinkedList<'a> =
+//     | ([])
+//     | (::) of head:'a * tail:'a // tuple
+//     
+let empty = []
+
+let addToList x xs =
+    x::xs
+    
+let sampleList = [2;3;4]
+let toList = addToList 1 sampleList
+
+let getFirstItem = function
+    | x:: _ -> Some x
+    | _ -> None
+    
+let getFirstItem' list =
+    List.tryHead
+
+// this line throws an exception empty list
+let x: int list = List.head []
+
+let rec printEveryItem = function // rec means recursive method
+    | x::xs -> // x::xs means if there is any item in a list
+        printfn $"{x}" // %O means we dont know the type there for print Object type
+        printEveryItem xs
+    | [] -> ()
+
+printEveryItem [1;2;3;4]
+
+let rec doWithEveryItem f = function // rec means recursive method
+    | x::xs -> // x::xs means if there is any item in a list
+        f x // %O means we dont know the type there for print Object type
+        doWithEveryItem f xs
+    | [] -> ()
+
+let printEveryItem' list =
+    doWithEveryItem (printfn "%O") list
+    
+let printEveryItem'' list =
+    list
+    |> List.iter (printfn "%O") // List.iter is foreach loop
+    
+
+
+let stringifyList (list: int list) =
+    list
+    |> List.map string
+    
+let l = 
+    [1 .. 10]
+    |> stringifyList
+    
+
+// Some 42
+// Some "42"
+let stringOption = 
+    Some 43
+    |> Option.map string
+    
+    
+// 2.29
+// List.fold
