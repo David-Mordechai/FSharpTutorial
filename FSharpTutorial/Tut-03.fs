@@ -1,7 +1,5 @@
 module Tut03
 
-open System
-
 // Record Type
 // tuple
 // Anonymous record
@@ -158,7 +156,7 @@ let arr2 = [|
                5
            |]
 let arr3 = [1..5]
-arr1.[0] <- 5
+arr1[0] <- 5
 
 // Lists
 // Immutable
@@ -197,7 +195,7 @@ let getFirstItem = function
     | _ -> None
     
 let getFirstItem' list =
-    List.tryHead
+    List.tryHead list
 
 // this line throws an exception empty list
 let x: int list = List.head []
@@ -243,3 +241,68 @@ let stringOption =
     
 // 2.29
 // List.fold
+
+let testList = [1..10] // sum
+let sum list =
+    list
+    |> List.fold (+) 0
+    
+let reduce list =
+    list
+    |> List.reduce (+)
+    
+let inline sum' list =
+    List.sum list
+    
+let resultSum' =
+    testList
+    |> sum'
+    
+let ResultSum =
+    testList
+    |> sum
+    
+let ResultReduce =
+    testList
+    |> reduce
+    
+let divideInteger denominator nominator =
+    match nominator % denominator with
+    | 0 -> Some <| nominator / denominator
+    | _ -> None
+    
+let divideBy2 = divideInteger 2
+
+let bindOption = 
+    24  
+    |> divideBy2
+    |> Option.bind divideBy2
+    |> Option.bind divideBy2
+
+
+// Exceptions
+
+exception CannotConnectException of System.Uri
+
+let handle f =
+    try
+        f()
+    with
+    | CannotConnectException _ -> ()
+    | :? System.ArgumentException as e -> printf $"%s{e.Message}"
+    
+raise (CannotConnectException(System.Uri("http://google.com")))
+
+type WithdrawalError =
+    | InsufficientFunds of double
+    | WrongPIN
+
+type Result<'Ok, 'Error> =
+    | Ok of 'Ok
+    | Error of 'Error
+
+let result = Error (InsufficientFunds 10.)
+
+
+//https://www.youtube.com/watch?v=gNARAXJd_tM
+//minute 24
