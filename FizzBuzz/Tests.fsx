@@ -1,4 +1,4 @@
-﻿#load "Library.fs"
+﻿#load "Domain.fs"
 open FizzBuzz
 
 Parser.tryParse "2"

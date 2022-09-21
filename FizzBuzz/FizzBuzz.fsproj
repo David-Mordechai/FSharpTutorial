@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Domain.fs" />
+    <Compile Include="Application.fs" />
     <None Include="Tests.fsx" />
-    <Compile Include="Library.fs" />
   </ItemGroup>
 
 </Project>

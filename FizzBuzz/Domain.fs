@@ -1,8 +1,8 @@
-﻿namespace FizzBuzz
+namespace FizzBuzz
 
 open System
 
-[<RequireQualifiedAccess>]
+[<RequireQualifiedAccess>]// this will force to use fromTryTuple with Option prefix -> Option.fromTryTuple
 module Option =
     let fromTryTuple = function
         | false, _ -> None
@@ -20,7 +20,7 @@ module Parser =
         |> Option.fromTryTuple
 
 module Validator =
-    type ValidNumber = private ValidNumber of int
+    type ValidNumber = private ValidNumber of int // this like Value type, in our case valid int for fizzbuzz 
     
     module ValidNumber =
         let tryValidateNumber number =
@@ -44,6 +44,7 @@ module FizzBuzz =
         |> String.concat "\n"
 
 module Domain =
+    
     open Validator
 
     type ParseNumber = string -> int option
@@ -81,31 +82,3 @@ module Domain =
             |> parseNumber
             |> Result.bind validateNumber
             |> Result.map getFizzBuzzString
-
-module Application =
-    open Domain
-
-    type Input = unit -> string
-    type Output = string -> unit
-
-    let execute =
-        Domain.execute
-            Parser.tryParse
-            Validator.ValidNumber.tryValidateNumber
-            FizzBuzz.getFizzBuzzString
-
-    let application (input: Input) (output: Output) =
-        fun () ->
-            output "Please enter a number between 1 and 4000"
-            input ()
-            |> execute
-            |> function
-                | Ok s -> 
-                    $"Here is the output:\n%s{s}"
-                    |> output
-                | Error (ParserError (NotANumber s)) ->
-                    $"%s{s} is not an integer"
-                    |> output
-                | Error (ValidatorError (InvalidNumber num)) ->
-                    $"You entered %i{num}. Please enter valid integer between 1 and 4000."
-                    |> output
